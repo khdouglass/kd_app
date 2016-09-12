@@ -29,7 +29,6 @@ def search_businesses(address):
 	for business in response.businesses:
 		businesses.append(business.name)
 		businesses.append(business.display_phone)
-		businesses.appnend(business.image_url)
 
 	return businesses
 
