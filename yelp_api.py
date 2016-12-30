@@ -26,11 +26,16 @@ def search_businesses(address):
 	
 	businesses = []
 	
+	
+	
 	for business in response.businesses:
 		businesses.append(business.name)
 		businesses.append(business.display_phone)
+		businesses.append(business.image_url)
+
 
 	return businesses
+
 
 #for business in businesses:)
 #print(businesses)
