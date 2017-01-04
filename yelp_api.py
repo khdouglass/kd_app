@@ -23,19 +23,17 @@ def search_businesses(address):
 	}
 
 	response = client.search(address, **params)
-	
-	businesses = []
-	
-	
-	
-	for business in response.businesses:
-		businesses.append(business.name)
-		businesses.append(business.display_phone)
-		businesses.append(business.image_url)
+
+	business_list = []
 
 
-	return businesses
+	
+	for business in response.businesses: 
+		business_list.append({"name":business.name, 
+			"photo": business.image_url,
+			"phone": business.display_phone,
+			"rating": business.rating_img_url})
+		
 
+	return business_list
 
-#for business in businesses:)
-#print(businesses)

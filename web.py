@@ -15,6 +15,7 @@ def index():
 	#will only pass through function if there is an address
 	if address:
 		businesses = yelp_api.search_businesses(address)
+		#phone = yelp_api.search_businesses(address)
 	return render_template('index.html', businesses=businesses)
 
 @app.route('/about')
