@@ -32,7 +32,8 @@ def search_businesses(address):
 		business_list.append({"name":business.name, 
 			"photo": business.image_url,
 			"phone": business.display_phone,
-			"rating": business.rating_img_url})
+			"rating": business.rating_img_url,
+			"url": business.url})
 		
 
 	return business_list

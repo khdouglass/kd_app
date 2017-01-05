@@ -7,14 +7,17 @@
 			<div class="container">
 				{% if businesses %}
 				<h1> Try one of these highly recommended restaurants! </h1>
+					<div class ="row">
+					<h2 style="padding-top:10px;"></h2>	
 					{% for business in businesses %}
-                    <h3>{{ business.name }} </h3>
-                    <img src="{{ business.photo }}">
+                    <h2>{{ business.name }} </h2>
+                    <img src="{{ business.photo }}" class="img-rounded">
                     <p> Rating: <img src="{{ business.rating }}"> </p>
                     <p> {{ business.review}} </p>
-                    <p> {{ business.phone }} </p>
-						{% endfor %} 
-                    
+                    <a href="{{ business.url }}"> Visit their wesbite</a>
+						{% endfor %}
+						
+						</div>
 					<a href="{{ url_for('index') }}">Look up another address</a>
 				{% else %}
 					<h1>Hi there! Where would you like to dine?</h1>
