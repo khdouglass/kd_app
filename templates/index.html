@@ -7,28 +7,27 @@
 			<div class="container">
 				{% if businesses %}
 				<h1> Try one of these highly recommended restaurants! </h1>
-					<div class ="row">
-					<h2 style="padding-top:10px;"></h2>	
+					<h2 style="padding-top:5px;"></h2>	
 					{% for business in businesses %}
-                    <h2>{{ business.name }} </h2>
-                    <img src="{{ business.photo }}" class="img-rounded">
-                    <p> Rating: <img src="{{ business.rating }}"> </p>
-                    <p> {{ business.review}} </p>
-                    <a href="{{ business.url }}"> Visit their wesbite</a>
-						{% endfor %}
-						
-						</div>
-					<a href="{{ url_for('index') }}">Look up another address</a>
-				{% else %}
-					<h1>Hi there! Where would you like to dine?</h1>
+                    	<h2>{{ business.name }} </h2>
+                   		<img src="{{ business.photo }}" class="img-rounded">
+                  		<p> Rating: <img src="{{ business.rating }}"> </p>
+                    	<p> {{ business.review}} </p>
+                    	<p><a href="{{ business.url }}"> Visit {{business.name}}'s wesbite</a></p>
+                    	{% endfor %}
+                    	<p><a href="{{ url_for('index') }}">Look up another address</a></p>
+					</div>
+				</div>
+			{% else %}
+				<h1>Hi there! Where would you like to dine?</h1>
 					<form action="/" class="form-inline">
 						<div class="form-group">
 							<input type="text" name="address" placeholder="City, State" class="form-control">
-						</div>
+							</div>
 							<input type="submit" value="Submit" class="btn btn-primary"	>
 						</form>
 					{% endif %}
-				<a href="{{ url_for('about') }}">About this project</a>
+				<a href="{{ url_for('about') }}">About this project</a></p>
 			</div>
 		</div>
 	</body>
